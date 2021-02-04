@@ -1,0 +1,246 @@
+@import "https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&family=Roboto:wght@100&display=swap";
+:root {
+    --color-green: #33fc0b;
+    --color-purple: #8302fc;
+    --color-logop: #e222fc;
+    --color-logob: #1fcbe1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    background: #000;
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    padding: 32px;
+    margin: 30px;
+    background-image: linear-gradient(rgb(3, 0, 0), rgb(12, 0, 0)), radial-gradient(circle at top left, #1fcbe1, #e222fc);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #000;
+}
+
+header div {
+    text-align: center;
+}
+
+header div a {
+    color: #f4eff7;
+    font-size: 18px;
+    line-height: 28px;
+    text-decoration: none;
+    margin: 0px 16px;
+    padding-bottom: 3px;
+}
+
+header div a:hover {
+    color: var(--color-logob);
+    transition: 0.5s;
+}
+
+#wrapper {
+    text-align: center;
+    padding: 32px;
+}
+
+#wrapper img {
+    width: 150px;
+    border-radius: 50%;
+    background-image: linear-gradient(rgb(3, 0, 0), rgb(12, 0, 0)), radial-gradient(circle at top left, #1fcbe1, #e222fc);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    padding: 5px;
+    margin-bottom: 32px;
+}
+
+#wrapper h1 {
+    font-size: 42px;
+    line-height: 52px;
+    font-weight: 400;
+    color: #ffffff;
+}
+
+#wrapper h2 {
+    font-size: 22px;
+    line-height: 32px;
+    font-weight: normal;
+    color: var(--color-logob);
+    opacity: 0.8;
+}
+
+#wrapper p {
+    max-width: 500px;
+    margin: 32px auto;
+    font-size: 15px;
+    line-height: 25px;
+    font-weight: 400;
+    color: #ffffff;
+}
+
+#wrapper p a {
+    color: var(--color-logob);
+    font-size: 16px;
+    line-height: 26px;
+    text-decoration: none;
+}
+
+#wrapper p a:hover {
+    color: var(--color-logop);
+    transition: all 0.5s;
+}
+
+#social {
+    text-align: center;
+}
+
+#social a {
+    color: var(--color-logob);
+    text-decoration: none;
+    transition: all 0.5s;
+}
+
+#social a:hover {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+#social img {
+    width: 38px;
+    margin: 5px;
+}
+
+/*=== CARDS ===*/
+
+.cards {
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.card {
+    background-color: #1b1b1b;
+    border-radius: 5px;
+    display: grid;
+    cursor: pointer;
+}
+
+.card__image-container img {
+    width: 253px;
+    height: 144px;
+    border-radius: 5px;
+}
+
+.card__content, .card__info {
+    padding: 24px;
+}
+
+.card__content {
+    font-size: 15px;
+    color: #8302fc;
+}
+
+.card__info {
+    font-size: 10px;
+    color: oldlace;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.card__autor, .card__info p {
+    background-color: #1b1b1b;
+    filter: brightness(90%);
+    padding: 5px 20px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+/*=== MODAL ===*/
+
+.modal-overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal {
+    background-color: #ffffff;
+    width: 90%;
+    height: 90%;
+    margin: 5vh auto;
+    position: relative;
+}
+
+.modal .close-modal {
+    color: #000;
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    cursor: pointer;
+}
+
+/*=== MODAL.ACTIVE ===*/
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+iframe {
+    width: 100%;
+    height: 90%;
+    position: absolute;
+    top: 5%
+}
+
+/* ==== FEATURED ===== */
+
+.featured-wrapper.card__image-container {
+    position: relative;
+}
+
+.featured {
+    background: #33fc0b;
+    padding: 2px 8px;
+    position: absolute;
+    right: 5px;
+    border-radius: 16px;
+    top: -10px;
+}
+
+/* === Video Page ===== */
+.video{
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.video.card{
+    cursor: initial;
+}
+
+.card__video-container{
+    position: relative;
+    width: 100%;
+    padding-top:  56.25%;
+}
+
+.card__video-container iframe{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+
+}
