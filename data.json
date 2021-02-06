@@ -1,1 +1,22 @@
-{"avatar_url":"https://images.pexels.com/photos/2011377/pexels-photo-2011377.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940","name":"Fernanda Dias","birth":"1991-03-09","gender":"F","services":"CrossFit"}
+{
+  "instructors": [
+    {
+      "id": 1,
+      "avatar_url": "https://google.com",
+      "name": "Fernanda Dias",
+      "birth": 668476800000,
+      "gender": "F",
+      "services": "Musculation",
+      "created_at": 1612643094656
+    },
+    {
+      "id": 2,
+      "avatar_url": "https://images.pexels.com/photos/2011377/pexels-photo-2011377.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "name": "Fernanda Dias",
+      "birth": 1612396800000,
+      "gender": "F",
+      "services": "Musculation",
+      "created_at": 1612643155290
+    }
+  ]
+}
