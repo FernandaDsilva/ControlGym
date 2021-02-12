@@ -1,6 +1,29 @@
 const fs = require('fs')
-const { url } = require('inspector')
 const data = require('./data.json')
+
+//Show
+exports.show = function(req, res){
+  const { id } = req.params
+
+  const foundInstructor = data.instructors.find(function(instructor) {
+    return id == instructor.id
+  })
+
+  if(!foundInstructor) return res.send("INSTRUCTOR NOT FOUND")
+
+    const instructor ={
+    ...foundInstructor,
+    age: "",
+    services: foundInstructor.services.split(","),
+    created_at:"",
+  }
+
+  return res.render("instructors/show", { instructor })
+
+}
+
+
+//create
 exports.post = function(req, res){
   
     const keys = Object.keys(req.body)
@@ -31,12 +54,13 @@ exports.post = function(req, res){
     fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err){
       if(err) return res.send("Write file name")
 
-      return res.redirect("/instructors")
+      
     })
 
-    // return res.send(req.body)
+    return res.redirect("/instructors")
 
  }
+
 
  
 //update
