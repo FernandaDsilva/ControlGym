@@ -139,15 +139,24 @@ input::placeholder{
     font-weight: normal;
 }
 
-button[type="submit"]{
+button[type="submit"],
+a.button{
     padding: 8px 32px;
     background-color: var(--secondary-color);
+    color: black;
     border-radius: 16px;
     margin-top:32px;
     width: 100%;
     font-size:16px;
     font-weight: 500;
 }
+a.button{
+    display:block;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+}
+
 
 
 @keyframes up{

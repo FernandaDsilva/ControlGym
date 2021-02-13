@@ -1,4 +1,5 @@
 const express = require('express')
+const { render } = require('nunjucks')
 const routes = express.Router()
 const instructors = require('./instructors')
 
@@ -14,6 +15,10 @@ routes.get('/instructors/create', function(req, res){
     return res.render('instructors/create')
 })
 routes.get('/instructors/:id', instructors.show)
+
+routes.get('/instructors/:id/edit', function (req, res){
+    return res.render('instructors/edit')
+})
 
 routes.post("/instructors", instructors.post)
 

@@ -17,6 +17,24 @@
       "gender": "M",
       "services": "CrossFit, Musculação",
       "created_at": 1613166986867
+    },
+    {
+      "id": 3,
+      "avatar_url": "https://images.pexels.com/photos/5327463/pexels-photo-5327463.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+      "name": "Fernanda Dias Melo",
+      "birth": 683856000000,
+      "gender": "F",
+      "services": "Yoga, Pilates, Personal",
+      "created_at": 1613185929070
+    },
+    {
+      "id": 4,
+      "avatar_url": "https://images.pexels.com/photos/5327463/pexels-photo-5327463.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+      "name": "Rodrigo Santana",
+      "birth": 683856000000,
+      "gender": "M",
+      "services": "Musculation",
+      "created_at": 1613187528988
     }
   ]
 }
