@@ -2,38 +2,28 @@
 
 {% block content %}
 
-<div class="card">  
-    <section class="avatar" style="background: url(https://images.pexels.com/photos/733500/pexels-photo-733500.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500) no-repeat center center / cover "></section>
-    <section class="details"> 
+<div class="card table-container">  
+    <table width="100%">
+        <thead>
+            <tr>
+                <th>Instructor</th>
+                <th>Atendimento</th>
+                <th> Action <th>
+            </tr>
+        </thead>
 
-        <h3>Details</h3>
-        <div class="item">
-            <div>Instructor</div>
-            <div>Guilherme Saraiva</div>
-        </div>
-        <div class="item">
-            <div>Idade</div>
-            <div>29</div>
-        </div>
-        <div class="item">
-            <div>Sexo</div>
-            <div>Masculino</div>
-        </div>
-         <div class="item">
-            <div>Acompanhamento</div>
-            <div>
-                <span>Musculação</span>
-                <span>Cross Fit</span>
-                <span> Cardio</span>
-            </div>
-        <div class="item">
-            <div>Desde</div>
-            <div>01/01/2019</div>
-        </div>
-        </div>
+        <tbody>
+            {% for instructor in instructors%}
+            <tr>
+                
+                <td><span style="background-image: url({{instructor.avatar_url}})"></span>{{instructor.name}}</td>
+                <td>{{instructor.services}}</td>
+                <td><a href="/instructors/{{instructor.id}}"> Acess </a></td>
+            </tr>
 
-
-    </section>
+            {% endfor %}
+        </tbody>
+    </table>
 </div>
 
 {% endblock content %}
