@@ -2,43 +2,18 @@
 
 {% block content %}
 
-    <div class="card">
-        <section class="avatar" style="background: url({{ instructor.avatar_url }}) no-repeat center center / cover "></section>
+<form class="card" method="POST" action="/instructors?_method=PUT">  
+    <section class="avatar" style="background: url({{instructor.avatar_url}}) no-repeat center center / cover "></section>
+    <section class="details"> 
 
-        <section class="details">
+        <h3> Edit Instructors</h3>
 
-            <h3>Edit Instructor</h3>
+        {% include 'instructors/fields.njk' %}
+         <input type="hidden" name="id" value="{{instructor.id}}">
+        
 
-            <div class="item">
-                <div>Instructor</div>
-                <div>{{ instructor.name }}</div>
-            </div>
-
-            <div class="item">
-                <div>Idade</div>
-                <div>{{ instructor.age }}</div>
-            </div>
-
-            <div class="item">
-                <div>Sexo</div>
-                <div>{{ "Male" if instructor.gender =="M" else "Female" }}</div>
-            </div>
-
-            <div class="item">
-                <div>Acompanhamento</div>
-                <div>
-                    {% for service in instructor.services %}
-                        <span>{{ service }}</span>
-                    {% endfor %}
-                </div>
-                
-                <div class="item">
-                    <div>Desde</div>
-                    <div>{{ instructor.created_at }}</div>
-                </div>
-            </div>
-            <a href="/" class="button"> Editar </a>
-        </section>
-    </div>
+    </section>
+</form>
 
 {% endblock content %}
+
