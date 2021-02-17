@@ -110,7 +110,8 @@ header{
     color: var(--primary-color);
 }
 
-.details .item div:nth-child(2) span{
+.details .item div:nth-child(2) span,
+tbody .services{
     padding: 8px 16px;
     background-color: var(--secondary-color);
     border-radius: 16px;
@@ -180,6 +181,7 @@ a.button{
 td, th{
     padding: 16px;
     border-bottom: 1px solid #d9d9d9;
+    
 }
 
 th{
@@ -221,6 +223,25 @@ tbody tr td:last-child a{
 .table-container thead tr th:last-child,
 td:last-child{
     text-align: center;
+}
+
+.table-container a{
+    padding: 8px 8px;
+    background-color: var(--secondary-color);
+    color: black;
+    border-radius: 16px;
+    margin-top: 16px;
+    width: 130px;
+    font-size:14px;
+    font-weight: 500;
+    
+}
+a.button{
+    display:block;
+    
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
 }
 
 
