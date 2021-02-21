@@ -4,21 +4,21 @@
 
 <div class="card">
 
-    <section class="avatar" style="background: url({{instructor.avatar_url}}) no-repeat center center / cover "></section>
+    <section class="avatar" style="background: url({{member.avatar_url}}) no-repeat center center / cover "></section>
         
-    <form method="POST" action="/instructors?_method=PUT">  
+    <form method="POST" action="/members?_method=PUT">  
         
         <section class="details"> 
 
-            <h3> Edit Instructors</h3>
+            <h3> Edit Members</h3>
 
-            {% include 'instructors/fields.njk' %}
-            <input type="hidden" name="id" value="{{instructor.id}}">
+            {% include 'members/fields.njk' %}
+            <input type="hidden" name="id" value="{{member.id}}">
     </form>
     
 
-    <form id="form-delete" action="/instructors?_method=DELETE" method="post">
-        <input type="hidden" name="id" value="{{instructor.id}}">
+    <form id="form-delete" action="/members?_method=DELETE" method="post">
+        <input type="hidden" name="id" value="{{member.id}}">
         <button type="submit">Delete</button>
     </form>
 

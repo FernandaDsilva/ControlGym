@@ -3,41 +3,43 @@
 {% block content %}
 
     <div class="card">
-        <section class="avatar" style="background: url({{ instructor.avatar_url }}) no-repeat center center / cover "></section>
+        <section class="avatar" style="background: url({{ member.avatar_url }}) no-repeat center center / cover "></section>
 
         <section class="details">
 
             <h3>Details</h3>
 
             <div class="item">
-                <div>Instructor</div>
-                <div>{{ instructor.name }}</div>
+                <div>Member</div>
+                <div>{{ member.name }}</div>
             </div>
 
             <div class="item">
-                <div>Idade</div>
-                <div>{{ instructor.age }}</div>
+                <div>Age</div>
+                <div>{{ member.age }}</div>
             </div>
 
             <div class="item">
-                <div>Sexo</div>
-                <div>{{ "Male" if instructor.gender =="M" else "Female" }}</div>
+                <div>Gender</div>
+                <div>{{ "Male" if member.gender =="M" else "Female" }}</div>
             </div>
 
             <div class="item">
-                <div>Acompanhamento</div>
+                <div>Blood Type</div>
                 <div>
-                    {% for service in instructor.services %}
-                        <span>{{ service }}</span>
-                    {% endfor %}
+                    {{member.blood}}
                 </div>
                 
                 <div class="item">
-                    <div>Desde</div>
-                    <div>{{ instructor.created_at }}</div>
+                    <div>Weight (kg)</div>
+                    <div>{{ member.weight }}</div>
+                </div>
+                <div class="item">
+                    <div>Height (cm) </div>
+                    <div>{{ member.height }}</div>
                 </div>
             </div>
-            <a href="/instructors/{{instructor.id}}/edit" class="button"> Editar </a>
+            <a href="/members/{{member.id}}/edit" class="button"> Editar </a>
         </section>
     </div>
 

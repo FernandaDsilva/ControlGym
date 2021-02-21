@@ -118,18 +118,18 @@ exports.put = function (req, res){
   })
 }
 
-exports.delete = function(req, res) {
-   const { id } = req.body
+exports.delete = function (req, res) {
+  const { id } = req.body
 
-   const filteredInstructors = data.instructors.filter(function(instructor){
-     return instructor.id !== id
-   })
+  const filteredInstructors = data.instructors.filter(function(instructor){
+      return instructor.id != id
+  })
 
-   data.instructors = filteredInstructors
+  data.instructors = filteredInstructors
 
-   fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err){
-     if (err) return res.send("Write fie error!")
+  fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err){
+      if (err) return res.send("Escreva o erro!")
 
-     return res.redirect("/instructors")
-   })
+      return res.redirect("/instructors")
+  })
 }

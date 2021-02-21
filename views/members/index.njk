@@ -4,26 +4,28 @@
 
 <div class="card table-container">  
     <table width="100%">
+  <a class="button" href="/members/create">New Members</a>
+
         <thead>
             <tr>
                 <th>Instructor</th>
-                <th>Atendimento</th>
+                <th>Contact</th>
                 <th> Action </th>
             </tr>
         </thead>
 
         <tbody>
-            {% for instructor in instructors%}
+            {% for member in members%}
             <tr>                
-                <td><span style="background-image: url({{instructor.avatar_url}})"></span>{{instructor.name}}</td>
-                <td>{{instructor.services}}</td>
-                <td><a href="/instructors/{{instructor.id}}"> Acess </a></td>
+                <td><span style="background-image: url({{member.avatar_url}})"></span>{{member.name}}</td>
+                <td>{{member.email}}</td>
+                <td><a href="/members/{{member.id}}"> Acess </a></td>
             </tr>
 
             {% endfor %}
         </tbody>
     </table>
-      <a class="button" href="/instructors/create">New Members</a>
+    
 
 </div>
 

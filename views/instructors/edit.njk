@@ -17,11 +17,10 @@
     </form>
     
 
-    <form id="form-delete" action="/instructors?_method=DELETE" method="post">
-        <input type="hidden" name="id" value="{{instructor.id}}">
-        <button type="submit">Delete</button>
-    </form>
-
+     <form id="form-delete" action="/instructors?_method=DELETE" method="post">
+                <input type="hidden" name="id" value={{instructor.id}}>
+                <button type="submit">Delete</button>
+            </form>
 
 </section>
 </div>

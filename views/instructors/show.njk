@@ -15,17 +15,17 @@
             </div>
 
             <div class="item">
-                <div>Idade</div>
+                <div>Age</div>
                 <div>{{ instructor.age }}</div>
             </div>
 
             <div class="item">
-                <div>Sexo</div>
+                <div>Gender</div>
                 <div>{{ "Male" if instructor.gender =="M" else "Female" }}</div>
             </div>
 
             <div class="item">
-                <div>Acompanhamento</div>
+                <div>Service</div>
                 <div>
                     {% for service in instructor.services %}
                         <span>{{ service }}</span>
@@ -33,11 +33,11 @@
                 </div>
                 
                 <div class="item">
-                    <div>Desde</div>
+                    <div>Create at</div>
                     <div>{{ instructor.created_at }}</div>
                 </div>
             </div>
-            <a href="/instructors/{{instructor.id}}/edit" class="button"> Editar </a>
+            <a href="/instructors/{{instructor.id}}/edit" class="button"> Edit </a>
         </section>
     </div>
 
