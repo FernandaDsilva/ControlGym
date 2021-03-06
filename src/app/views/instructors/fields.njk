@@ -1,65 +1,43 @@
 <div class="item">
-    <div>Avatar</div>
-      <div>
-            <input 
-            type="url"
-            name="avatar_url" 
-            placeholder="https://" 
-            value="{{instructor.avatar_url}}">
-      </div>
-</div>
-
-<div class="item">
-
-    <div>Instructor</div>
-    
-    <div> 
-        <input 
-        type="text" 
-        name="name" 
-        placeholder="Name of instructors" 
-        value="{{instructor.name}}">        
-    </div>
-
-</div>
-
-<div class="item">
-    <div>Birth date</div>
+    <div>Avatar URL</div>
     <div>
-        <input 
-        type="date" 
-        name="birth" 
-        value="{{instructor.birth}}">
-
+        <input type="url" name="avatar_url" placeholder="http://" value="{{ instructor.avatar_url }}">
     </div>
+</div>
 
+<div class="item">
+    <div>Instructor</div>
+    <div>
+        <input type="text" name="name" placeholder="Nome do Instrutor" value="{{ instructor.name }}">
+    </div>
+</div>
+
+<div class="item">
+    <div>Birth Date</div>
+    <div>
+        <input type="date" name="birth" value="{{ instructor.birth }}">
+    </div>
 </div>
 
 <div class="item">
     <div>Gender</div>
     <div>
         <span>
-            <input type="radio" name="gender" value="M" {% if instructor.gender=='M' %} checked="checked" {% endif %}>
-            Male</span>
+            <input type="radio" name="gender" value="M" {% if instructor.gender == 'M'%} checked={% endif %}>
+            Male
+        </span>
         <span>
-            <input type="radio" name="gender" value="F" {% if instructor.gender=='F' %} checked="checked" {% endif %}>
+            <input type="radio" name="gender" value="F" {% if instructor.gender == 'F'%} checked={% endif %}>
             Female
         </span>
     </div>
-
 </div>
 
 <div class="item">
-    <div>Work Modality</div>
+    <div>Services</div>
     <div>
-        <input 
-        type="text" 
-        name="services" 
-        placeholder="Insert modality" 
-        value="{{instructor.services}}">
+        <input type="text" name="services" value="{{ instructor.services }}">
     </div>
 </div>
 
-<button type="submit">
-    Save
-</button>
+<button type="submit"><i class="fas fa-save"> Save</i></button>

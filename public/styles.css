@@ -1,19 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-:root{
-    --primary-color: #7159c1;
-    --secondary-color: #f7b71e;
+:root {
+    --primary-color: #000000;
+    --secondary-color: #f7df1e;
 }
-*{
+
+* {
     margin: 0;
     padding: 0;
     border: none;
 }
-body{
+
+body {
     background-color: var(--primary-color);
     font-family: 'Roboto', sans-serif;
 }
-header{
+
+header {
     background-color: white;
     width: 100%;
     padding: 32px;
@@ -24,94 +27,98 @@ header{
 .links {
     font-size: 22px;
 }
+
 .links a + a {
-    margin-left: 32px;    
+    margin-left: 32px;
 }
 
-.links a {     
+.links a {
     text-decoration: none;
-    color: #777777;
+    color: #777;
     position: relative;
-
 }
 
-.links a.active{
+.links a.active {
     font-weight: bold;
     color: var(--primary-color);
 }
 
-.links a:hover{
+.links a:hover {
     color: var(--primary-color);
 }
-.links a::after{
+
+.links a:after {
     content: "";
     width: 0;
     height: 2px;
     background-color: var(--primary-color);
     position: absolute;
     left: 0;
-    bottom: -4px;
+    bottom: -4;
 }
 
-.links a:hover::after{
+.links a:hover::after {
+    transition: width 200ms ease-in-out;
     width: 100%;
-    transition: width 500ms ease-in-out ;
 }
 
-
-/* CARD */
-
-.card{
+.card {
     background-color: white;
-    width:800px;
+    min-width: 900px;
+    max-width: 1100px;
     min-height: 400px;
-
     margin: 45px auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
-
-    box-shadow: 0px 2px 6px 5px rgba(0,0,0,0.1);
-
-    /* ANIMATION */
-    
-    animation-name:up 200ms ease-out;
-}  
-
-/* DATAILS */
-
-.details{
-    padding:32px;
-
+    box-shadow: 0px 2px 6px -2px rgba(0, 0, 0, 0.4);
+    animation-name: up 200ms ease-out;
 }
-.details .item{
-    border-bottom: 1px solid rgba(0,0,0,0.1);
-    padding:16px 0;
+
+@keyframes up {
+    from {
+        opacity: 0;
+        transform: translateY(15px) ;
+    }
+    to {
+        opacity: 1;
+    }
 }
-.details .item:last-child{
+
+.details {
+    padding: 32px;
+}
+
+.details .item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 16px 0;
+}
+
+.details .item:last-child {
     border: none;
 }
+
 .details h3,
-.details .item div:nth-child(1){
-    font-size:14px;
+.details .item div:nth-child(1) {
+    font-size: 14px;
     line-height: 24px;
+    color: #777;
     letter-spacing: 0.7px;
-    font-weight:normal;
-
+    font-weight: normal;
 }
-.details .item div:nth-child(2){
-    color: #555555;
+
+.details .item div:nth-child(2) {
+    color: #555;
     font-weight: bold;
-    font-size:18px;
+    font-size: 18px;
 }
 
-.details h3{
+.details h3 {
     text-transform: uppercase;
     font-weight: bold;
     color: var(--primary-color);
 }
 
-.details .item div:nth-child(2) span,
-tbody .services{
+.details .item span {
     padding: 8px 16px;
     background-color: var(--secondary-color);
     border-radius: 16px;
@@ -119,140 +126,205 @@ tbody .services{
     margin-right: 4px;
     margin-top: 8px;
     display: inline-block;
-    text-transform: uppercase;
-    font-size:12px;
-}
-
-/* FORM */
-
-input{
-    width:100%;   
-    color: #555555;
     font-weight: bold;
-    font-size:18px;
+    text-transform: uppercase;
+    font-size: 12px;
 }
-input[type="radio"]{
-    width:initial;
+
+input, select {
+    width: 100%;
+    outline: none;
+    color: #555;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+input[type="radio"] {
+    width: initial;
     margin-right: 4px;
 }
-input::placeholder{
-    font-size:16px;
+
+input::placeholder {
+    font-size: 16px;
+    line-height: 20px;
     font-weight: normal;
 }
 
 button[type="submit"],
-a.button{
+a.button {
     padding: 8px 32px;
-    background-color: var(--secondary-color);
-    color: black;
-    border-radius: 16px;
-    margin-top:32px;
+    background-color: var(--primary-color);
+    border-radius: 4px;
+    margin-top: 32px;
     width: 100%;
-    font-size:16px;
-    font-weight: 500;
+    color: white;
+    font-size: 16px;
 }
-a.button{
-    display:block;
+
+a.button {
+    display: block;
     box-sizing: border-box;
     text-align: center;
     text-decoration: none;
 }
 
-#form-delete button[type="submit"]{
+#form-delete button[type="submit"] {
     margin-top: 8px;
-    background-color: lightcoral;
+    background-color:lightcoral;
 }
 
+#form-delete button[type="submit"]:hover,
+button[type="submit"]:hover,
+tbody tr td:last-child a:hover,
+.table-container > a:hover {
+    cursor: pointer;
+    transition: 300ms;
+    text-decoration: underline;
+}
 
-/* INDEX INSTRUCTOS */
-
-.table-container{
+.table-container {
     display: block;
     padding: 40px;
     box-sizing: border-box;
 }
-.table-container table{
+
+.table-container table {
+    width: 100%;
     border-spacing: 0;
 }
+
 .table-container thead tr th {
     text-align: left;
 }
 
-td, th{
+td, 
+th {
     padding: 16px;
     border-bottom: 1px solid #d9d9d9;
-    
 }
 
-th{
+th {
     text-transform: uppercase;
     color: #777;
     font-size: 14px;
 }
 
-tbody tr:last-child td{
-    border-bottom:none;
+tbody tr:last-child td {
+    border-bottom: none;
 }
 
 tbody tr td:first-child {
-   display: grid;
-   grid-template-columns: 64px 1fr;
-   align-items: center;
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    align-items: center;
 }
 
-tbody tr td:first-child span{
+tbody tr td:first-child span {
     width: 48px;
     height: 48px;
     background-position: center;
     background-size: cover;
     border-radius: 50%;
     box-shadow: 3px 1px 6px -4px black;
-    border: 2px solid white
+    border: 2px solid white;
 }
 
-tbody tr td:last-child a{
+tbody tr td:last-child a,
+.table-container > a {
     background-color: var(--primary-color);
-    padding: 8px 8px;
+    padding: 8px 16px;
     text-decoration: none;
-    text-transform:uppercase;
-    color:white;
-    font-size: 10px;
-    border-radius:8px;
+    text-transform: uppercase;
+    color: white;
+    font-size: 12px;
+    border-radius: 4px;
+}
+
+.table-container > a {
+    display: inline-block;
+    margin-bottom: 16px;
+    font-weight: bold;
+}
+
+.table-container > a:hover {
+    background-color: var(--secondary-color);
+    color:black;
+    font-weight: bold;
 }
 
 .table-container thead tr th:last-child,
-td:last-child{
+td:last-child {
     text-align: center;
 }
 
-.table-container a{
-    padding: 8px 8px;
-    background-color: var(--secondary-color);
-    color: black;
+tbody #td-services {
+    background: var(--secondary-color);
     border-radius: 16px;
-    margin-top: 16px;
-    width: 130px;
-    font-size:14px;
-    font-weight: 500;
-    
-}
-a.button{
-    display:block;
-    
-    box-sizing: border-box;
+    color: #777;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 8px 16px;
     text-align: center;
+    display: inline-block;
+}
+
+
+.table-container .header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.table-container .header a{
+    margin: 0;
+    width: 180px;
+}
+
+.table-container .header form {
+    display: grid;
+    grid-template-columns:  1fr 120px;
+    align-items: center;
+    grid-gap: 8px;
+}
+
+.table-container .header input {
+    border: 1px solid #eee;
+    padding: 4px 8px;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.table-container .header form button {
+    margin: 0;
+}
+
+
+.table-container {
+    display: grid;
+    grid-template: 64px 1fr 16px / 1fr;
+}
+
+.table-container .header {
+    margin: 0;
+    align-self: start;
+}
+
+.table-container .pagination {
+    margin: 0;
+    align-self: end;
+    justify-self: center;
+}
+
+.pagination a,
+.pagination span {
+    color: var(--primary-color);
     text-decoration: none;
+    margin-right: 16px;
 }
 
-
-
-@keyframes up{
-    0%{
-        opacity: 0;
-        transform: translateY(15px)
-    }
-    100%{
-        opacity: 1;
-    }
+.pagination a:hover{
+    filter: brightness(0.3);
+    border-bottom: 1px solid var(--primary-color);
 }
-

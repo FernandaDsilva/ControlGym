@@ -4,8 +4,16 @@
 {% block content %}
 <div class="card table-container">
   <div class="header">
-        <a class="button" href="/members/create">New Instrutor</a>
-      
+        <a class="button" href="/members/create"> <i class="fas fa-plus"></i> Members</a>
+        <form action="/members" method="GET">
+            <input 
+                type="text"
+                name="filter"
+                placeholder="Nome or Email"
+                value={{filter}}
+            >
+           <button type="submit"><i class="fas fa-search"></i>  Find</button>
+        </form>
     </div>
 
     <table> 
@@ -15,8 +23,7 @@
                 <th>Email</th>
                 <th>Weight</th>
                 <th>Height</th>
-                <th>Action</th>
-
+                <th>Details</th>
             </tr>
         </thead>
 
@@ -29,7 +36,7 @@
                     <td>{{member.weight}}kg</td>                           
                     <td>{{member.height}}cm</td>
                            
-                    <td> <a href="/members/{{member.id}}">Details</a> </td>
+                    <td> <a href="/members/{{member.id}}"> <i class="far fa-eye"></i></a> </td>
                 </tr>
             {% endfor%}
         </tbody>
@@ -43,3 +50,5 @@
 
 </div>
 {% endblock content %}
+
+

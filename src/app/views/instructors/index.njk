@@ -1,49 +1,56 @@
 {% extends "layout.njk" %}
 
+
 {% block content %}
+<div class="card table-container">
 
-    <div class="card table-container">
-
-        <table width="100%">
-            <a class="button" href="/instructors/create">New Instructor</a>
-
-            <thead>
-                <tr>
-                    <th>Instructor</th>
-                    <th>Service</th>
-                    <th>Membership</th>
-                    <th>Action
-                    </th>
-                </tr>
-            </thead>
-
-            <tbody>
-                {% for instructor in instructors%}
-                    <tr>
-                        <td>
-                            <span style="background-image: url({{instructor.avatar_url}})"></span>{{instructor.name}}
-                        </td>
-
-                        <td>
-                            {% for service in instructor.services.split(",")%}
-
-                                <div class="services">{{service}}</div>
-
-                            {% endfor %}
-                        </td>
-                        
-                        <td>{{instructor.total_students}}</td>
-
-                        <td>
-                            <a href="/instructors/{{instructor.id}}">
-                                Details
-                            </a>
-                        </td>
-                    </tr>
-
-                {% endfor %}
-            </tbody>
-        </table>
+    <div class="header">
+        <a class="button" href="/instructors/create"><i class="fas fa-plus"></i> Instructor</a>
+        <form action="/instructors" method="GET">
+            <input 
+                type="text"
+                name="filter"
+                placeholder="Name or Services"
+                value={{filter}}
+            >
+            <button type="submit"><i class="fas fa-search"></i>  Find</button>
+        </form>
     </div>
+ 
 
+    <table width="100%"> 
+        <thead> 
+            <tr> 
+                <th>Instructor</th>
+                <th>Services</th>
+                <th>Membership</th>
+                <th>Details</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for instructor in instructors %}
+                <tr>
+                    <td><span style="background-image: url({{instructor.avatar_url}})"></span>
+                        {{instructor.name}}</td>   
+                        <td> 
+                            {% for service in instructor.services.split(",")%} 
+                            <div id="td-services">{{service}} </div>  
+                            {% endfor %} </td> 
+                            <td>{{instructor.total_students}}</td>                           
+                    <td> <a href="/instructors/{{instructor.id}}"> <i class="far fa-eye"></i></a> </td>
+                </tr>
+            {% endfor%}
+        </tbody>
+    </table>
+
+    <div class="pagination"
+    data-page={{pagination.page}}
+    data-total={{pagination.total}}
+    data-filter={{filter}}
+    ></div>
+
+</div>
 {% endblock content %}
+
+

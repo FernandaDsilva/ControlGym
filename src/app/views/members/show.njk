@@ -11,10 +11,10 @@
 
     <section class="details">
 
-        <h3>Details</h3>
+        <h3>Detalhes</h3>
 
         <div class="item">
-            <div>Member</div>
+            <div>Membro</div>
             <div>{{ member.name }}</div>
         </div>
 
@@ -24,37 +24,37 @@
         </div>
 
         <div class="item">
-            <div>Birth Date</div>
+            <div>Aniversário</div>
             <div>{{ member.birth }}</div>
         </div>
 
         <div class="item">
-            <div>Gender</div>
-            <div>{{ "Male" if member.gender == "M" else "Female"}}</div>
+            <div>Sexo</div>
+            <div>{{ "Masculino" if member.gender == "M" else "Feminino"}}</div>
         </div>
 
         <div class="item">
-            <div>Blood Type</div>
+            <div>Tipo Sanguíneo</div>
             <div>{{ member.blood }}</div>
         </div>
 
         <div class="item">
-            <div>Weight (kg)</div>
+            <div>Peso (kg)</div>
             <div>{{ member.weight }}</div>
         </div>
 
         
         <div class="item">
-            <div>Height (cm)</div>
+            <div>Altura (cm)</div>
             <div>{{ member.height }}</div>
         </div>
 
           <div class="item">
-            <div>Instrutor</div>
+            <div>Aluno de</div>
             <div>{{ member.instructor_name }}</div>
         </div>
         
-        <a href="/members/{{ member.id }}/edit" class="button">Edit</a>
+        <a href="/members/{{ member.id }}/edit" class="button"><i class="fas fa-user-edit"> Edit</i></a>
 
     </section>
 

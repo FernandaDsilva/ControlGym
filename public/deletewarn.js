@@ -7,4 +7,4 @@ formDelete.addEventListener("submit", function(event){
     }
 })
 
-module.exports = mensagedelete.js
+module.exports = deletewarn.js

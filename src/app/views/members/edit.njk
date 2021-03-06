@@ -12,10 +12,9 @@
         <section class="details">
                 <form method="POST" action="/members?_method=PUT">
                 <h3>Edit Member</h3>
-               
+
                 {% include 'members/fields.njk'%}
 
-               
                 <input 
                     type="hidden" 
                     name="id" 
@@ -25,12 +24,13 @@
 
             <form id="form-delete" action="/members?_method=DELETE" method="post">
                 <input type="hidden" name="id" value={{member.id}}>
-                <button type="submit">Delete</button>
+                <button type="submit"><i class="fas fa-trash-alt"> Delete</i></button>
             </form>
 
         </section>
 
-        <script src="/mensagedelete.js"></script>
+    <script src="/deletewarn.js"></script>
+    
 
 </div>
 
