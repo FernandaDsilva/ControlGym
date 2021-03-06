@@ -4,28 +4,35 @@
 
 <div class="card">
 
-    <section class="avatar" style="background: url({{member.avatar_url}}) no-repeat center center / cover "></section>
-        
-    <form method="POST" action="/members?_method=PUT">  
-        
-        <section class="details"> 
+        <section 
+            class="avatar" 
+            style="background: url({{member.avatar_url}}) no-repeat center center / cover">
+        </section>
 
-            <h3> Edit Members</h3>
+        <section class="details">
+                <form method="POST" action="/members?_method=PUT">
+                <h3>Edit Member</h3>
+               
+                {% include 'members/fields.njk'%}
 
-            {% include 'members/fields.njk' %}
-            <input type="hidden" name="id" value="{{member.id}}">
-    </form>
-    
+               
+                <input 
+                    type="hidden" 
+                    name="id" 
+                    value={{member.id}}
+                >
+            </form>
 
-    <form id="form-delete" action="/members?_method=DELETE" method="post">
-        <input type="hidden" name="id" value="{{member.id}}">
-        <button type="submit">Delete</button>
-    </form>
+            <form id="form-delete" action="/members?_method=DELETE" method="post">
+                <input type="hidden" name="id" value={{member.id}}>
+                <button type="submit">Delete</button>
+            </form>
 
+        </section>
 
-</section>
+        <script src="/mensagedelete.js"></script>
+
 </div>
 
 
 {% endblock content %}
-

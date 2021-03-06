@@ -1,33 +1,45 @@
 {% extends "layout.njk" %}
 
+
 {% block content %}
+<div class="card table-container">
+  <div class="header">
+        <a class="button" href="/members/create">New Instrutor</a>
+      
+    </div>
 
-<div class="card table-container">  
-    <table width="100%">
-  <a class="button" href="/members/create">New Members</a>
+    <table> 
+        <thead> 
+            <tr> 
+                <th>Member</th>
+                <th>Email</th>
+                <th>Weight</th>
+                <th>Height</th>
+                <th>Action</th>
 
-        <thead>
-            <tr>
-                <th>Instructor</th>
-                <th>Contact</th>
-                <th> Action </th>
             </tr>
         </thead>
 
-        <tbody>
-            {% for member in members%}
-            <tr>                
-                <td><span style="background-image: url({{member.avatar_url}})"></span>{{member.name}}</td>
-                <td>{{member.email}}</td>
-                <td><a href="/members/{{member.id}}"> Acess </a></td>
-            </tr>
-
-            {% endfor %}
+        <tbody> 
+            {% for member in members %}
+                <tr>
+                    <td><span style="background-image: url({{member.avatar_url}})"></span>
+                        {{member.name}}</td>   
+                    <td>{{member.email}}</td>                           
+                    <td>{{member.weight}}kg</td>                           
+                    <td>{{member.height}}cm</td>
+                           
+                    <td> <a href="/members/{{member.id}}">Details</a> </td>
+                </tr>
+            {% endfor%}
         </tbody>
     </table>
-    
+
+        <div class="pagination"
+            data-page={{pagination.page}}
+            data-total={{pagination.total}}
+            data-filter={{filter}}
+        ></div>
 
 </div>
-
 {% endblock content %}
-

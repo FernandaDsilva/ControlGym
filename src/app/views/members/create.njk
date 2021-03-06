@@ -2,74 +2,17 @@
 
 {% block content %}
 
-<form class="card" method="POST" action="/members">  
-    <section class="avatar" style="background: url(https://images.pexels.com/photos/733500/pexels-photo-733500.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500) no-repeat center center / cover "></section>
-    <section class="details"> 
+{# o post é o metodo de formulario e o action é onde ele ficara, no caso é a pasta de intrutor  #}
+<form class="card" method="POST" action="/members">
 
-        <h3>New Members</h3>
-        <div class="item">
-            <div>Avatar</div>
-            <input type="url" 
-            name="avatar_url" 
-            placeholder="https://">
-        </div>
-        <div class="item">
-            <div>Member</div>
-            <input type="text" 
-            name="name">
-        </div>
-         <div class="item">
-            <div>E-mail</div>
-            <input type="text" 
-            name="email">
-        </div>
-        <div class="item">
-            <div>Birth date</div>
-            <input type="date"  
-            name="birth">
-        </div>
-        <div class="item">
-            <div>Gender</div>
-            <div>  
-                <span> <input type="radio" name="gender" value="M" checked> Male</span> 
-                <span> <input type="radio" name="gender" value="F"> Female</span>
-            </div>
-            
-        </div>
-         <div class="item">
-            <div> Blood Type </div>
-            <select name="blood">
-                <option value="A+" {% if member.blood == "A+" %} selected {%endif%}> A+ </option>
-                <option value="A-" {% if member.blood == "A-" %} selected {%endif%}> A- </option>
-                <option value="AB+" {% if member.blood == "AB+" %} selected {%endif%}> AB+ </option>
-                <option value="AB-" {% if member.blood == "AB-" %} selected {%endif%}> AB- </option>
-                <option value="O+" {% if member.blood == "O+" %} selected {%endif%}> O+ </option>
-                <option value="O-" {% if member.blood == "0-" %} selected {%endif%}> O- </option>
-                <option value="B+" {% if member.blood == "B+" %} selected {%endif%}> B+ </option>
-                <option value="B-" {% if member.blood == "B-" %} selected {%endif%}> B- </option>
-            </select>
-        </div>
+   <section class="avatar" style="background: url(https://images.pexels.com/photos/733500/pexels-photo-733500.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500) no-repeat center center / cover "></section>
 
-         <div class="item">
-            <div>Weight (kg) </div>
-            <input type="number" 
-            name="weight"
-            value="{{member.weight}}">
-
-        </div>
-
-        <div class="item">
-            <div>Height (cm)</div>
-            <input type="number" 
-            name="height"
-            value="{{member.height}}">
-
-        </div>    
-
-        <button type="submit"> Save </button>
+    <section class="details">
+        <h3>New Member</h3>
+        {% include 'members/fields.njk'%}
 
     </section>
 </form>
 
 {% endblock content %}
-
+    
