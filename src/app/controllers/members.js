@@ -19,7 +19,7 @@ module.exports = {
         const pagination = {
           filter,
           total: Math.ceil(members[0].total / limit),
-          page,
+          page
         };
         return res.render("members/index", { members, pagination, filter });
       },
