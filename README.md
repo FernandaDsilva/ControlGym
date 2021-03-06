@@ -43,11 +43,9 @@ npm install
 ```bash
 npm start
 ```
-Projeto realizado pela Rocketseat..
-
 ## License
 
-Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](./LICENSE) para mais detalhes.
+This project is under the MIT license. See the archiv [LICENSE](./LICENSE) for more details.
 
 ## Special Thanks
 I just want to thank you [Rocketseat](https://rocketseat.com.br) for this awesome opportunity to learn more about those technologies. This module was really amazing and I've learned a lot!
